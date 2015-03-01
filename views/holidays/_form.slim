@@ -1,0 +1,22 @@
+form
+
+  / These form helpers will actually build out options and persist values for us, so that we
+  / don't have to manually! `country_options` and `month_options` are both helpers defined
+  / in `app.rb`, to extract larger chunks of code from our views into our Ruby files, which
+  / is best practice. After all, when a designer or other front-end person is looking at your,
+  / views, it could be confusing having to read through a bunch of code they don't really care
+  / about.
+
+  .form-group
+    == label :holidays, :country
+    == select :holidays, :country, country_options, required: true, class: 'form-control'
+
+  .form-group
+    == label :holidays, :year
+    == input :holidays, :year, max: @current_time.year, type: :number, required: true, class: 'form-control'
+
+  .form-group
+    == label :holidays, :month
+    == select :holidays, :month, month_options, required: true, class: 'form-control'
+
+  button.btn.btn-primary type='submit' Display Holidays

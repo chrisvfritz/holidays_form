@@ -1,0 +1,20 @@
+- if @holidays.any?
+
+  table.table.table-striped
+    thead
+      tr
+        th Date
+        th Name
+    tbody
+      - @holidays.each do |holiday|
+        tr
+          td= format_date holiday['date']
+          td= holiday['name']
+
+- else
+
+  p No holidays found for #{current_search}.
+
+/ As you can see, there are a couple different ways we can inject the results
+/ of Ruby code into our view here: `=` and with `#{}`. There's no difference
+/ between them. They're just different styles, useful for different contexts.
