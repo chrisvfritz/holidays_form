@@ -1,0 +1,22 @@
+language: ruby
+rvm:
+  - 2.2.0
+
+addons:
+  code_climate:
+    repo_token:
+      secure: "avwJw69y99JEbu0OudBPuG8HF0CBbRc4Ua+cfRqhzl2lK/OECjJSLpbI1V18oCyTNNHooABKnFS8liPXLglqoa7hJhY79sozlrqVgTbtSgL+YdjLoiItjii/1qqJrfNq109u2YewAgeTXPsz0e+v4vHeZJweXzjWUqoObbl2q08="
+
+bundler_args: --without development production
+
+script:
+  - bundle exec rspec
+
+deploy:
+  provider: heroku
+  api_key:
+    secure: "nxESZKkn2z6LLkyE3C+oEr0iP7X2d2yj6qgYOZyrpMiZIpDG0+zHngUNFdtAfJfACfAVSpnNjS17hUIQtAG0x4aBDP8f5zDoJO/ytmQNp+M6KmxR4p3v9XnckEs+Hqmk9M0ITw1gTxB7Eznzjp7cJwZg7elUAXBfkUPeEzVtQ38="
+  app:
+    master: tc359-holidays-form
+  on:
+    repo: chrisvfritz/holidays_form
