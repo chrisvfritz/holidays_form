@@ -1,0 +1,38 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://holidayapi.com/v1/holidays?country=US&month=3&year=1987
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - ruby-holidapi-0.0.1
+      Content-Type:
+      - application/json; charset=utf-8
+      Accept-Encoding:
+      - gzip, deflate
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 14 Mar 2015 21:32:42 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: ASCII-8BIT
+      string: '{"status":200,"holidays":[{"name":"Ash Wednesday","country":"US","date":"1987-03-04"},{"name":"International
+        Women''s Day","country":"US","date":"1987-03-08"},{"name":"Saint Patrick''s
+        Day","country":"US","date":"1987-03-17"}]}'
+    http_version: 
+  recorded_at: Sat, 14 Mar 2015 21:32:43 GMT
+recorded_with: VCR 2.9.3

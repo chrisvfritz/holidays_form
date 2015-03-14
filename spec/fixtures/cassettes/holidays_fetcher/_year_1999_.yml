@@ -1,0 +1,76 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://holidayapi.com/v1/holidays?country=US&year=1999
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - ruby-holidapi-0.0.1
+      Content-Type:
+      - application/json; charset=utf-8
+      Accept-Encoding:
+      - gzip, deflate
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 14 Mar 2015 21:32:42 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: ASCII-8BIT
+      string: '{"status":200,"holidays":{"1999-01-01":[{"name":"Last Day of Kwanzaa","country":"US","date":"1999-01-01"},{"name":"New
+        Year''s Day","country":"US","date":"1999-01-01"}],"1999-01-06":[{"name":"Epiphany","country":"US","date":"1999-01-06"}],"1999-01-07":[{"name":"Orthodox
+        Christmas","country":"US","date":"1999-01-07"}],"1999-01-18":[{"name":"Martin
+        Luther King, Jr. Day","country":"US","date":"1999-01-18"}],"1999-02-02":[{"name":"Groundhog
+        Day","country":"US","date":"1999-02-02"}],"1999-02-14":[{"name":"Valentine''s
+        Day","country":"US","date":"1999-02-14"}],"1999-02-15":[{"name":"Washington''s
+        Birthday","country":"US","date":"1999-02-15"}],"1999-02-17":[{"name":"Ash
+        Wednesday","country":"US","date":"1999-02-17"}],"1999-03-08":[{"name":"International
+        Women''s Day","country":"US","date":"1999-03-08"}],"1999-03-17":[{"name":"Saint
+        Patrick''s Day","country":"US","date":"1999-03-17"}],"1999-03-28":[{"name":"Palm
+        Sunday","country":"US","date":"1999-03-28"}],"1999-04-01":[{"name":"April
+        Fools'' Day","country":"US","date":"1999-04-01"}],"1999-04-02":[{"name":"Good
+        Friday","country":"US","date":"1999-04-02"}],"1999-04-04":[{"name":"Easter","country":"US","date":"1999-04-04"}],"1999-04-22":[{"name":"Earth
+        Day","country":"US","date":"1999-04-22"}],"1999-04-30":[{"name":"Arbor Day","country":"US","date":"1999-04-30"}],"1999-05-01":[{"name":"May
+        Day","country":"US","date":"1999-05-01"}],"1999-05-04":[{"name":"Star Wars
+        Day","country":"US","date":"1999-05-04"}],"1999-05-05":[{"name":"Cinco de
+        Mayo","country":"US","date":"1999-05-05"}],"1999-05-09":[{"name":"Mother''s
+        Day","country":"US","date":"1999-05-09"}],"1999-05-31":[{"name":"Memorial
+        Day","country":"US","date":"1999-05-31"}],"1999-06-14":[{"name":"Flag Day","country":"US","date":"1999-06-14"}],"1999-06-20":[{"name":"Father''s
+        Day","country":"US","date":"1999-06-20"}],"1999-06-27":[{"name":"Helen Keller
+        Day","country":"US","date":"1999-06-27"}],"1999-07-04":[{"name":"Independence
+        Day","country":"US","date":"1999-07-04"}],"1999-08-26":[{"name":"Women''s
+        Equality Day","country":"US","date":"1999-08-26"}],"1999-09-06":[{"name":"Labor
+        Day","country":"US","date":"1999-09-06"}],"1999-09-11":[{"name":"Patriot Day","country":"US","date":"1999-09-11"}],"1999-09-12":[{"name":"Grandparent''s
+        Day","country":"US","date":"1999-09-12"}],"1999-09-17":[{"name":"Constitution
+        Day","country":"US","date":"1999-09-17"}],"1999-10-06":[{"name":"German-American
+        Day","country":"US","date":"1999-10-06"}],"1999-10-09":[{"name":"Leif Erkson
+        Day","country":"US","date":"1999-10-09"}],"1999-10-11":[{"name":"Columbus
+        Day","country":"US","date":"1999-10-11"}],"1999-10-31":[{"name":"Halloween","country":"US","date":"1999-10-31"}],"1999-11-02":[{"name":"Election
+        Day","country":"US","date":"1999-11-02"}],"1999-11-11":[{"name":"Veterans
+        Day","country":"US","date":"1999-11-11"}],"1999-11-25":[{"name":"Thanksgiving
+        Day","country":"US","date":"1999-11-25"}],"1999-11-26":[{"name":"Black Friday","country":"US","date":"1999-11-26"}],"1999-12-07":[{"name":"Pearl
+        Harbor Remembrance Day","country":"US","date":"1999-12-07"}],"1999-12-08":[{"name":"Immaculate
+        Conception of the Virgin Mary","country":"US","date":"1999-12-08"}],"1999-12-24":[{"name":"Christmas
+        Eve","country":"US","date":"1999-12-24"}],"1999-12-25":[{"name":"Christmas","country":"US","date":"1999-12-25"}],"1999-12-26":[{"name":"First
+        Day of Kwanzaa","country":"US","date":"1999-12-26"}],"1999-12-27":[{"name":"Second
+        Day of Kwanzaa","country":"US","date":"1999-12-27"}],"1999-12-28":[{"name":"Third
+        Day of Kwanzaa","country":"US","date":"1999-12-28"}],"1999-12-29":[{"name":"Fourth
+        Day of Kwanzaa","country":"US","date":"1999-12-29"}],"1999-12-30":[{"name":"Fifth
+        Day of Kwanzaa","country":"US","date":"1999-12-30"}],"1999-12-31":[{"name":"New
+        Year''s Eve","country":"US","date":"1999-12-31"},{"name":"Sixth Day of Kwanzaa","country":"US","date":"1999-12-31"}]}}'
+    http_version: 
+  recorded_at: Sat, 14 Mar 2015 21:32:43 GMT
+recorded_with: VCR 2.9.3

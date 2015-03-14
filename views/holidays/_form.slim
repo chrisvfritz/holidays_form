@@ -1,22 +1,20 @@
-form
+form#holidays_form
 
   / These form helpers will actually build out options and persist values for us, so that we
-  / don't have to manually! `country_options` and `month_options` are both helpers defined
-  / in `app.rb`, to extract larger chunks of code from our views into our Ruby files, which
-  / is best practice. After all, when a designer or other front-end person is looking at your,
-  / views, it could be confusing having to read through a bunch of code they don't really care
-  / about.
+  / don't have to manually! `COUNTRY_OPTIONS` is a constant defined in `app.rb`. I use
+  / double-equals instead of just equals to inject the results of this code, in order to
+  / bypass the HTML escaping that slim will normally do, to avoid letting users inject
+  / HTML directly, which would be a security issue.
 
   .form-group
     == label :holidays, :country
-    == select :holidays, :country, country_options, required: true, class: 'form-control'
+    == select :holidays, :country, COUNTRY_OPTIONS, required: true, class: 'form-control'
 
   .form-group
-    == label :holidays, :year
-    == input :holidays, :year, max: @current_time.year, type: :number, required: true, class: 'form-control'
-
-  .form-group
-    == label :holidays, :month
-    == select :holidays, :month, month_options, required: true, class: 'form-control'
+    == label :holidays, :date
+    p.text-muted
+      span.glyphicon.glyphicon-info-sign>
+      | Accepts many date formats and you can be as specific or as general as you like. We can list holidays for a specific day, entire month, or entire year.
+    == input :holidays, :date, type: :text, required: true, class: 'form-control'
 
   button.btn.btn-primary type='submit' Display Holidays
