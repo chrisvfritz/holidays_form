@@ -21,6 +21,7 @@ VCR.configure do |config|
   config.cassette_library_dir = 'spec/fixtures/cassettes'
   config.hook_into :webmock
   config.ignore_localhost = true
+  config.ignore_hosts 'codeclimate.com'
 end
 
 Capybara.app = HolidayApp::Main
