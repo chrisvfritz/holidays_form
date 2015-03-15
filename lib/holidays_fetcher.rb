@@ -19,7 +19,7 @@ module HolidayApp
     # This is a method that exposes the normalized results to the world outside of
     # this class.
     def results
-      normalized_results
+      @results ||= normalized_results
     end
 
   private
@@ -32,7 +32,7 @@ module HolidayApp
     # that array, ensuring that in the end, I always get the same format: an array
     # of hashes.
     def normalized_results
-      ( api_results.is_a?(Hash) ? api_results.values : api_results ).flatten
+      @normalized_results ||= ( api_results.is_a?(Hash) ? api_results.values : api_results ).flatten
     end
 
     # Grabs the raw, ugly results from the holidapi gem. I assign it to an

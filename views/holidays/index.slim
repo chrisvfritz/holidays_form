@@ -1,27 +1,29 @@
-.col-md-6
+.row
 
-  h1 Search for Holidays
+  .col-md-6
 
-  p Discover the holidays for a given country and date (or date range).
+    h1 Search for Holidays
 
-  / Here, we're loading code from a "partial". By convention, they begin with an
-  / an underscore to differentiate them from the views we call from our app.rb.
-  / Partials are *only* ever called from within other view files and they're a
-  / great way to separate view code into discrete chunks, to avoid huge files,
-  / facilitate rapid file switching, and keep everything DRY.
-  == slim :'holidays/_form'
+    p Discover the holidays for a given country and date (or date range).
 
-.col-md-6
+    / Here, we're loading code from a "partial". By convention, they begin with an
+    / an underscore to differentiate them from the views we call from our app.rb.
+    / Partials are *only* ever called from within other view files and they're a
+    / great way to separate view code into discrete chunks, to avoid huge files,
+    / facilitate rapid file switching, and keep everything DRY.
+    == slim :'holidays/_form'
 
-  h1 Holidays for #{current_search}
+  .col-md-6
 
-  / As you might have noticed, we're using `==` instead of just `=` to inject
-  / the results of this line into our view. The difference is that `=` escapes
-  / any HTML. This means that if a `<a href="http://blah.com">Blah</a>` is
-  / returned, for example, `=` won't show a link on the page. Instead, it will
-  / show the literal text "<a href="http://blah.com">Blah</a>". `==` on the
-  / other hand, will actually show the link. This is mostly a security measure,
-  / to ensure that any text we're getting from a user doesn't accidentally
-  / include a link or even JavaScript that could potentially do harm to our
-  / other users.
-  == slim :'holidays/_results'
+    h1 Holidays for #{current_search}
+
+    / As you might have noticed, we're using `==` instead of just `=` to inject
+    / the results of this line into our view. The difference is that `=` escapes
+    / any HTML. This means that if a `<a href="http://blah.com">Blah</a>` is
+    / returned, for example, `=` won't show a link on the page. Instead, it will
+    / show the literal text "<a href="http://blah.com">Blah</a>". `==` on the
+    / other hand, will actually show the link. This is mostly a security measure,
+    / to ensure that any text we're getting from a user doesn't accidentally
+    / include a link or even JavaScript that could potentially do harm to our
+    / other users.
+    == slim :'holidays/_results'

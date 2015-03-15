@@ -23,7 +23,7 @@ module HolidayApp
     # Returns the date parameters for the Holiday API, deleting any parameters
     # where the value is false.
     def date_params
-      {
+      @date_params ||= {
         year: year,
         month: month,
         day: day
@@ -33,9 +33,11 @@ module HolidayApp
     # Formats the date appropriately, depending on specificity,
     # when parsed dates are converted to a string.
     def to_s
-      return @date.stamp('January 1st, 2010') if @date.day?
-      return @date.stamp('January 2010')      if @date.month?
-      @date.stamp('2010')
+      @to_s ||= begin
+        return @date.stamp('January 1st, 2010') if @date.day?
+        return @date.stamp('January 2010')      if @date.month?
+        @date.stamp('2010')
+      end
     end
 
   private
@@ -43,8 +45,8 @@ module HolidayApp
     # Creates methods for year, month, and day, returning false if the
     # date was inferred by Ruby's date class, rather then specified by
     # the user. Otherwise returns the year, month, or day as an integer.
-    %i(year month day).each do |arst|
-      define_method(arst) { @date.send("#{arst}?") && @date.send(arst) }
+    %i(year month day).each do |date_piece|
+      define_method(date_piece) { instance_eval "@#{date_piece} ||= @date.send(date_piece.to_s+'?') && @date.send(date_piece)" }
     end
 
   end

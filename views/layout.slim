@@ -17,5 +17,9 @@ html
 
       == yield
 
+      - if %i(development test).include? HolidayApp::Main.environment
+        .well style="margin-top: 20px;"
+          a.btn.btn-lg.btn-block.btn-warning href="#{flamegraph_path}" Flamegraph
+
       script src='//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js'
       script src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js'

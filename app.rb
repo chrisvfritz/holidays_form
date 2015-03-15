@@ -5,16 +5,22 @@ require 'rubygems'
 require 'bundler/setup'
 
 require 'sinatra/base'
-# An alternative templating language that doesn't make us type as much as ERB does.
+# An alternative templating language that doesn't make us type as much as ERB does
 require 'slim'
-# Some helpers to make forms work more simply.
+# Some helpers to make forms work more simply
 require 'sinatra/form_helpers'
 
 require_relative 'lib/date_parser'
 require_relative 'lib/holidays_fetcher'
 
+# Gives us performance metrics on every page load in development
+require 'rack-mini-profiler'
+require 'flamegraph'
+require 'stackprof'
+
 module HolidayApp
   class Main < Sinatra::Base
+    use Rack::MiniProfiler
     helpers Sinatra::FormHelpers
 
     # Establishes SUPPORTED_COUNTRIES as a constant (that's what the all caps mean). A constant
@@ -61,6 +67,11 @@ module HolidayApp
 
       def format_date(date)
         HolidayApp::DateParser.new date
+      end
+
+      def flamegraph_path
+        param_symbol = request.fullpath.index(/\/\?\w+/) ? '&' : '?'
+        request.fullpath + "#{param_symbol}pp=flamegraph"
       end
 
     end
