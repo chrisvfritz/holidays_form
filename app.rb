@@ -13,16 +13,19 @@ require 'sinatra/form_helpers'
 require_relative 'lib/date_parser'
 require_relative 'lib/holidays_fetcher'
 
-# Gives us performance metrics on every page load in development
-unless ENV['RACK_ENV'] == 'production'
-  require 'rack-mini-profiler'
-  require 'flamegraph'
-  require 'stackprof'
-end
-
 module HolidayApp
   class Main < Sinatra::Base
-    use Rack::MiniProfiler unless ENV['RACK_ENV'] == 'production'
+    # Gives us performance metrics on every page load in development
+    configure :development, :test do
+      require 'rack-mini-profiler'
+      require 'flamegraph'
+      require 'stackprof'
+      use Rack::MiniProfiler
+    end
+    # Server monitoring by New Relic
+    configure :production do
+      require 'newrelic_rpm'
+    end
     helpers Sinatra::FormHelpers
 
     # Establishes SUPPORTED_COUNTRIES as a constant (that's what the all caps mean). A constant

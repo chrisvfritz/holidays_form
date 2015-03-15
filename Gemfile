@@ -8,7 +8,7 @@ ruby '2.2.0'
 # A DSL for creating simple webapps
 gem 'sinatra', '~> 1.4.5'
 # A better webserver than the default WEBrick.
-gem 'thin', '~> 1.6.3'
+gem 'passenger'
 # Using `bundle exec shotgun`, we the server will automatically reload when it needs to.
 gem 'shotgun', '~> 0.9.1'
 
@@ -82,4 +82,9 @@ group :test do
   gem 'simplecov', '~> 0.9.2', require: false
   # Sends stats about our code to Code Climate during builds
   gem 'codeclimate-test-reporter', require: nil
+end
+
+group :production do
+  # Server monitoring by New Relic
+  gem 'newrelic_rpm'
 end
