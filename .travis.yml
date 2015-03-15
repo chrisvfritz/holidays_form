@@ -3,6 +3,11 @@ rvm:
   - 2.2.0
   - 1.9.3
 
+branches:
+  except:
+    - lazy_basic
+    - lazy_mega
+
 addons:
   code_climate:
     repo_token:
