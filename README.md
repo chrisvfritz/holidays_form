@@ -11,6 +11,14 @@ git clone https://github.com/chrisvfritz/holidays_form.git
 cd holidays_form
 ```
 
+If you don't have Ruby 2.2.0 installed, you can just delete `ruby '2.2.0'` from the Gemfile, but the application has only been tested with this version. If you want to install Ruby 2.2.0, you can:
+
+``` bash
+rbenv install 2.2.0 # for rbenv
+# OR
+rvm install ruby-2.2.0 # for rvm
+```
+
 ``` bash
 bundle install
 bundle exec rackup
