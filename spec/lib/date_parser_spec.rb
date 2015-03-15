@@ -29,10 +29,10 @@ describe HolidayApp::DateParser do
 
     end
 
-    context 'when passed "april 10, 2004"' do
+    context 'when passed "april 1, 2004"' do
 
-      subject { @parser.new('april 10, 2004').date_params }
-      it { is_expected.to eq({ year: 2004, month: 4, day: 10 }) }
+      subject { @parser.new('april 1, 2004').date_params }
+      it { is_expected.to eq({ year: 2004, month: 4, day: 1 }) }
 
     end
 
@@ -62,10 +62,10 @@ describe HolidayApp::DateParser do
 
     end
 
-    context 'when passed "april 10, 2004"' do
+    context 'when passed "april 1, 2004"' do
 
-      subject { @parser.new('april 10, 2004').to_s }
-      it { is_expected.to eq('April 10th, 2004') }
+      subject { @parser.new('april 1, 2004').to_s }
+      it { is_expected.to eq('April 1st, 2004') }
 
     end
 

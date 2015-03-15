@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://holidayapi.com/v1/holidays?country=US&day=10&month=8&year=2004
+    uri: http://holidayapi.com/v1/holidays?country=US&day=1&month=4&year=2004
     body:
       encoding: US-ASCII
       string: ''
@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 14 Mar 2015 21:32:44 GMT
+      - Sun, 15 Mar 2015 16:21:52 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -30,7 +30,7 @@ http_interactions:
       - Accept-Encoding
     body:
       encoding: ASCII-8BIT
-      string: '{"status":200,"holidays":[]}'
+      string: '{"status":200,"holidays":[{"name":"April Fools'' Day","country":"US","date":"2004-04-01"}]}'
     http_version: 
-  recorded_at: Sat, 14 Mar 2015 21:32:45 GMT
+  recorded_at: Sun, 15 Mar 2015 16:21:52 GMT
 recorded_with: VCR 2.9.3

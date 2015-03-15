@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 14 Mar 2015 21:32:42 GMT
+      - Sun, 15 Mar 2015 16:21:52 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -34,5 +34,5 @@ http_interactions:
         Women''s Day","country":"US","date":"1987-03-08"},{"name":"Saint Patrick''s
         Day","country":"US","date":"1987-03-17"}]}'
     http_version: 
-  recorded_at: Sat, 14 Mar 2015 21:32:43 GMT
+  recorded_at: Sun, 15 Mar 2015 16:21:52 GMT
 recorded_with: VCR 2.9.3

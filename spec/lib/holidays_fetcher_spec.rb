@@ -13,7 +13,7 @@ describe HolidayApp::HolidaysFetcher do
       [
         { year: 1999 },
         { year: 1987, month: 3 },
-        { year: 2004, month: 8, day: 10 }
+        { year: 2004, month: 4, day: 1 }
       ].each do |example_date_params|
 
         context "when passed #{example_date_params} for the date_params" do
