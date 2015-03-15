@@ -35,7 +35,6 @@ module HolidayApp
       # has no value.
       params['holidays'] ||= {}
       @country = params['holidays']['country'] ||= 'US'
-      # Date handling is done by a
       @date    = params['holidays']['date']      = HolidayApp::DateParser.new params['holidays']['date']
 
       # Just in case the user manages to sneak in some bad data, like an empty year for those browsers
