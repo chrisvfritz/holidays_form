@@ -74,5 +74,5 @@ group :test do
   # Generates test coverage metrics locally
   gem 'simplecov', '~> 0.9.2', require: false
   # Sends stats about our code to Code Climate during builds
-  gem 'codeclimate-test-reporter', require: false
+  gem 'codeclimate-test-reporter', require: nil
 end

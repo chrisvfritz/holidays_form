@@ -9,7 +9,6 @@ else
 end
 
 require 'capybara/rspec'
-require 'webmock'
 require 'vcr'
 
 require_relative '../app'
