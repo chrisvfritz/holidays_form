@@ -6,6 +6,8 @@ This is a simple Sinatra app to demonstrate how the holidays form project in TC3
 
 ## Run locally
 
+Clone the repo:
+
 ``` bash
 git clone https://github.com/chrisvfritz/holidays_form.git
 cd holidays_form
@@ -19,7 +21,9 @@ rbenv install 2.2.0 # for rbenv
 rvm install ruby-2.2.0 # for rvm
 ```
 
+And finally, to run the server:
+
 ``` bash
 bundle install
-bundle exec rackup
+bundle exec shotgun
 ```
