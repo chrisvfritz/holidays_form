@@ -48,6 +48,13 @@ group :development do
   gem 'rack', '1.5.2'
   # Allows us to automatically re-run specs on file saves with `bundle exec guard`
   gem 'guard-rspec', '~> 4.5.0', require: false
+end
+
+# ----------------------------------
+# DEVELOPMENT/TEST-ONLY DEPENDENCIES
+# ----------------------------------
+
+group :development, :test do
   # Gives us performance metrics on every page load in development
   gem 'rack-mini-profiler', '~> 0.9.3'
   # Provides a flamegraph to rack-mini-profiler

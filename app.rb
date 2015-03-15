@@ -14,9 +14,11 @@ require_relative 'lib/date_parser'
 require_relative 'lib/holidays_fetcher'
 
 # Gives us performance metrics on every page load in development
-require 'rack-mini-profiler'
-require 'flamegraph'
-require 'stackprof'
+unless ENV['RACK_ENV'] == 'production'
+  require 'rack-mini-profiler'
+  require 'flamegraph'
+  require 'stackprof'
+end
 
 module HolidayApp
   class Main < Sinatra::Base

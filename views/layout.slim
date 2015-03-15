@@ -17,7 +17,7 @@ html
 
       == yield
 
-      - if %i(development test).include? HolidayApp::Main.environment
+      - unless HolidayApp::Main.environment == :production
         .well style="margin-top: 20px;"
           a.btn.btn-lg.btn-block.btn-warning href="#{flamegraph_path}" Performance Breakdown
 
