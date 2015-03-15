@@ -17,6 +17,11 @@ require_relative '../app'
 HolidayApp::Main.environment = :test
 Bundler.require :default, HolidayApp::Main.environment
 
+WebMock.disable_net_connect!(
+  allow_localhost: true,
+  allow: [ /codeclimate.com/ ]
+)
+
 VCR.configure do |config|
   config.cassette_library_dir = 'spec/fixtures/cassettes'
   config.hook_into :webmock
