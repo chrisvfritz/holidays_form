@@ -7,6 +7,10 @@ branches:
     - lazy_basic
     - lazy_mega
 
+env:
+  global:
+    - TZ="US/Eastern"
+
 addons:
   code_climate:
     repo_token:

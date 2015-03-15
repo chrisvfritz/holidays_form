@@ -5,6 +5,12 @@ feature 'Holidays index' do
     context 'when the current date is 2015-03-14' do
 
       before do
+        class Date
+          def self.today
+            Date.new 2015, 3, 14
+          end
+        end
+
         VCR.use_cassette 'holidays_fetcher/current_date' do
           visit '/'
         end
