@@ -14,7 +14,7 @@ env:
 addons:
   code_climate:
     repo_token:
-      secure: "avwJw69y99JEbu0OudBPuG8HF0CBbRc4Ua+cfRqhzl2lK/OECjJSLpbI1V18oCyTNNHooABKnFS8liPXLglqoa7hJhY79sozlrqVgTbtSgL+YdjLoiItjii/1qqJrfNq109u2YewAgeTXPsz0e+v4vHeZJweXzjWUqoObbl2q08="
+      secure: "ctl8kfDYf8EH/Gwr7ZU5yqjV49U7TaMyHNnKat+4/5+LjE0ZDfyQyFQn/7ELJJXhmRQW90rRlZOqiDSjf2jAawl1xgxdL7ltCUAejLX4C3aykFMLTfOnV78cVgxbVbrHiCFqoKIclIFwe+jk2KCX7sHRCHxt/URIobY6H5zXv/o="
 
 bundler_args: --without development production
 
