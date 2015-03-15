@@ -22,7 +22,7 @@ end
 
 module HolidayApp
   class Main < Sinatra::Base
-    use Rack::MiniProfiler
+    use Rack::MiniProfiler unless ENV['RACK_ENV'] == 'production'
     helpers Sinatra::FormHelpers
 
     # Establishes SUPPORTED_COUNTRIES as a constant (that's what the all caps mean). A constant
