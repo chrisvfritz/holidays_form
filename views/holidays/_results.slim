@@ -9,7 +9,8 @@
       - @holidays.each do |holiday|
         tr
           td= format_date holiday['date']
-          td= holiday['name']
+          td width='100%'
+            = holiday['name']
 
 - else
 

@@ -10,23 +10,13 @@ require 'slim'
 # Some helpers to make forms work more simply
 require 'sinatra/form_helpers'
 
+require_relative 'lib/holiday_app/config'
 require_relative 'lib/date_parser'
 require_relative 'lib/holidays_fetcher'
 
 module HolidayApp
-  class Main < Sinatra::Base
-    # Gives us performance metrics on every page load in development
-    configure :development, :test do
-      require 'rack-mini-profiler'
-      require 'flamegraph'
-      require 'stackprof'
-      use Rack::MiniProfiler
-    end
-    # Server monitoring by New Relic
-    configure :production do
-      require 'newrelic_rpm'
-    end
-    helpers Sinatra::FormHelpers
+  class Main < HolidayApp::Config
+    set :root, File.dirname(__FILE__)
 
     # Establishes SUPPORTED_COUNTRIES as a constant (that's what the all caps mean). A constant
     # just means we define it once, then never change it. We put this here instead of inside of
@@ -62,21 +52,29 @@ module HolidayApp
       slim :'holidays/index'
     end
 
+    # Some helpers to make forms work more simply
+    helpers Sinatra::FormHelpers
+
     # Helper methods allow you to pull complicated and/or repeated logic out of your views. Helper
     # methods are available from any of your view files.
     helpers do
 
+      # Displays a nicely formatted summary of the current search
       def current_search
         @current_search ||= "#{@date} in #{@selected_country}"
       end
 
+      # Formats dates for the search results
       def format_date(date)
         HolidayApp::DateParser.new date
       end
 
+      # Generates the path to generate a flamegraph to help us get a finer-tuned view of performance
       def flamegraph_path
-        param_symbol = request.fullpath.index(/\/\?\w+/) ? '&' : '?'
-        request.fullpath + "#{param_symbol}pp=flamegraph"
+        @flamegraph_path ||= begin
+          param_symbol = request.fullpath.index(/\/\?\w+/) ? '&' : '?'
+          request.fullpath + "#{param_symbol}pp=flamegraph"
+        end
       end
 
     end
