@@ -16,5 +16,7 @@ module HolidayApp
       require 'newrelic_rpm'
     end
 
+    set :root, File.dirname(__FILE__) + '/../..'
+
   end
 end
